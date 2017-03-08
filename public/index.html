@@ -28,29 +28,24 @@
       <div>
         <p>Slack allows for a maximum of 100 files to be deleted at one go. If your files are more than 100, refresh and repeat untill they are all deleted.</p>
       </div>
-      <div>
-        <label>Slack token:
-          <input style="width: 350px;" ng-model="slackInfoVm.token" type="text" />
-        </label>
-        <a href="https://slack.com/signin" target="_black">Sign in slack</a>, if you are not already, and find - or generate - your <code>slack token</code> from the bottom of <a href="https://api.slack.com/web" target="_black">this page</a>.
-      </div>
-      <div>
-        <label>I am
+      <h2>Instructions</h2>
+      <ol>
+        <li><a href="https://slack.com/signin">Sign into Slack.</a></li>
+        <li>Go to this page: <a href="https://api.slack.com/custom-integrations/legacy-tokens">https://api.slack.com/custom-integrations/legacy-tokens</a></li>
+        <li>Scroll down and click the big, green <b>Request Token</b> button next to the PIGSquad team.</li>
+        <li>Copy the token it creates. (It will look crazy, like <code>abcd-1234567890-1234567890-12345678901-ab1cd2ef3g</code>.)</li>
+        <li>Paste your Slack token into this textbox: <input style="width: 350px;" ng-model="slackInfoVm.token" type="text" /></li>
+        <li>Select your name:
           <select ng-model="slackInfoVm.user" ng-options="users.id as users.name for users in slackInfoVm.usersList">
             <option value="">-- select a member --</option>
           </select>
-        </label>
-      </div>
-      <div>
-        <label>Files created
-          <select ng-cloak ng-model="slackInfoVm.days" ng-options="days for days in slackInfoVm.daysList">
-          </select>
-          days ago.
-        </label>
-      </div>
-      <div>
-        <a class="btn btn-danger" href ng-click="slackInfoVm.deleteFiles()" analytics-on="click" analytics-event="DeleteFilesClicked">Delete files</a>
-      </div>
+        </li>
+        <li>Delete files older than:           <select ng-cloak ng-model="slackInfoVm.days" ng-options="days for days in slackInfoVm.daysList">
+          </select> (Please select <b>now</b>!)</li>
+        <li><a class="btn btn-danger" href ng-click="slackInfoVm.deleteFiles()" analytics-on="click" analytics-event="DeleteFilesClicked">Delete files</a></li>
+      </ol>
+
+      <h2>Results</h2>      
       <div style="margin-top:25px;">
         <p> Files deleted: <strong ng-cloak>{{slackInfoVm.deleteCount}}</strong></p>
       </div>
