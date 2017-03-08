@@ -24,12 +24,12 @@
   <div class="container">
     <a href="https://github.com/alibojar/Bulk-Delete-Slack-Files"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/c6625ac1f3ee0a12250227cf83ce904423abf351/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png"></a>
     <div slack-info>
-      <h1>Delete Slack Files in Bulk</h1>
+      <h1>Delete Your PIGSquad Slack Files in Bulk!</h1>
       <div>
-        <p>Slack allows for a maximum of 100 files to be deleted at one go. If your files are more than 100, refresh and repeat untill they are all deleted.</p>
+        <p>Slack allows for a maximum of 100 files to be deleted at one go. <b>If you have more than 100 files, refresh and repeat untill they are all deleted.</b></p>
       </div>
       <h2>Instructions</h2>
-      <ol>
+      <ol style="line-height: 2em;">
         <li><a href="https://slack.com/signin">Sign into Slack.</a></li>
         <li>Go to this page: <a href="https://api.slack.com/custom-integrations/legacy-tokens">https://api.slack.com/custom-integrations/legacy-tokens</a></li>
         <li>Scroll down and click the big, green <b>Request Token</b> button next to the PIGSquad team.</li>
@@ -40,8 +40,8 @@
             <option value="">-- select a member --</option>
           </select>
         </li>
-        <li>Delete files older than:           <select ng-cloak ng-model="slackInfoVm.days" ng-options="days for days in slackInfoVm.daysList">
-          </select> (Please select <b>now</b>!)</li>
+        <li>Delete files older than <select ng-cloak ng-model="slackInfoVm.days" ng-options="days for days in slackInfoVm.daysList">
+          </select> days. (Please select "<b>now</b>"!)</li>
         <li><a class="btn btn-danger" href ng-click="slackInfoVm.deleteFiles()" analytics-on="click" analytics-event="DeleteFilesClicked">Delete files</a></li>
       </ol>
 
